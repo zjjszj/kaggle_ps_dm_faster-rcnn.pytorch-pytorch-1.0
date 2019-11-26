@@ -396,6 +396,7 @@ class Predictor:
         webcam_num=-1
         cfg_file='/kaggle/input/mydetector/cfgs/vgg16.yml'
         vis=False
+        cfg.CUDA = True
 
 
         cfg_from_file(cfg_file)
@@ -468,7 +469,6 @@ class Predictor:
         num_boxes = Variable(num_boxes, volatile=True)
         gt_boxes = Variable(gt_boxes, volatile=True)
 
-        cfg.CUDA = True
 
         fasterRCNN.cuda()
 
