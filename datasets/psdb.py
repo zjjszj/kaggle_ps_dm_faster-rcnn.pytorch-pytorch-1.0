@@ -48,7 +48,7 @@ class psdb(imdb):
         self._image_index = self._load_image_set_index()
         self._probes = self._load_probes()
         self._roidb_handler = self.gt_roidb
-        self.cache_path='/'
+        #self.cache_path='/'
 
 
         assert osp.isdir(self._root_dir), \
