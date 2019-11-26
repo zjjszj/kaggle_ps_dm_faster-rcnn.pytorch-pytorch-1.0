@@ -85,7 +85,7 @@ def filter_roidb(roidb):
     print('after filtering, there are %d images...' % (len(roidb)))
     return roidb
 
-from datasets.psdb import psdb
+from mydetector.datasets.psdb import psdb
 def combined_roidb(imdb_names, training=True):
   """
   Combine multiple roidbs
