@@ -390,15 +390,14 @@ class Trainer:
 
     def train(self):
         #参数
-        dataset='imagenet'
+        dataset='pascal_voc'
+        imdb_name = "voc_2007_trainval"
+        imdbval_name = "voc_2007_test"
+        set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
         net='vgg16'
         num_workers=1
-        lr=0.001
         lr_decay_step=5
         large_scale=False
-        imdb_name = "imagenet_train"
-        imdbval_name = "imagenet_val"
-        set_cfgs = ['ANCHOR_SCALES', '[4, 8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '30']
         save_dir='models'
         batch_size=1
         optimizer='sgd'
