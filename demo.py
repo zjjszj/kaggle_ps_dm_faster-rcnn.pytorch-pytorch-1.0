@@ -388,13 +388,13 @@ class Predictor:
         checksession=1
         checkepoch =6
         checkpoint =10021
-        load_dir='./mydetector/model'
+        load_dir='/kaggle/input/fasterrcnn_vgg16_pretrainmodel/faster_rcnn_1_6_10021.pth'
         cfgs ='vgg16.vml'
         set_cfgs=None
-        dataset='imagenet'
+        dataset='pascal_voc'
         image_dir='images'
         webcam_num=-1
-        cfg_file='./mydetector/cfgs/vgg16.yml'
+        cfg_file='/kaggle/input/mydetector/cfgs/vgg16.yml'
         vis=False
 
 
