@@ -10,7 +10,7 @@ import torch.utils.data as data
 #from PIL import Image
 import torch
 
-from mydetector.utils.config import cfg
+from mydetector.model.utils.config import cfg
 from mydetector.roi_data_layer.minibatch import get_minibatch, get_minibatch
 #from model.rpn.bbox_transform import bbox_transform_inv, clip_boxes
 

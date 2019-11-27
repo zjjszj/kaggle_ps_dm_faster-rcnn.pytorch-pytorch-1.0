@@ -14,7 +14,7 @@ import PIL
 # from model.utils.cython_bbox import bbox_overlaps
 import numpy as np
 import scipy.sparse
-from mydetector.utils.config import cfg
+from mydetector.model.utils.config import cfg
 #import pdb
 
 ROOT_DIR = osp.join(osp.dirname(__file__), '..', '..')

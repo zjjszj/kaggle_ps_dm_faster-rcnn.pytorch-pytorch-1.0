@@ -9,7 +9,7 @@ from __future__ import print_function
 
 from mydetector.datasets.imdb import imdb
 import mydetector.datasets.ds_utils as ds_utils
-from mydetector.utils.config import cfg
+from mydetector.model.utils.config import cfg
 import os.path as osp
 import os
 import numpy as np

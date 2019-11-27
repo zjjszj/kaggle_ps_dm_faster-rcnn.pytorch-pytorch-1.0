@@ -5,7 +5,7 @@ from __future__ import print_function
 
 #import datasets
 import numpy as np
-from mydetector.utils.config import cfg
+from mydetector.model.utils.config import cfg
 #from datasets.factory import get_imdb
 import PIL
 

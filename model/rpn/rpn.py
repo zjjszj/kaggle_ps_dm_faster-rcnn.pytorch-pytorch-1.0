@@ -4,10 +4,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
 
-from mydetector.utils.config import cfg
+from mydetector.model.utils.config import cfg
 from .proposal_layer import _ProposalLayer
 from .anchor_target_layer import _AnchorTargetLayer
-from mydetector.utils.net_utils import _smooth_l1_loss
+from mydetector.model.utils.net_utils import _smooth_l1_loss
 
 import numpy as np
 import math

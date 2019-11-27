@@ -13,7 +13,7 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 import math
 import torchvision.models as models
-from mydetector.faster_rcnn.faster_rcnn import _fasterRCNN
+from mydetector.model.faster_rcnn.faster_rcnn import _fasterRCNN
 import pdb
 
 class vgg16(_fasterRCNN):
