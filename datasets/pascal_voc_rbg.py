@@ -20,7 +20,7 @@ import pickle
 import subprocess
 import uuid
 from .voc_eval import voc_eval
-from mydetector.model.utils.config import cfg
+from mydetector.utils.config import cfg
 import pdb
 
 

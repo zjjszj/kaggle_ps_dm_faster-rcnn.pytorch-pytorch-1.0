@@ -17,7 +17,7 @@ import gzip
 import PIL
 import json
 from .vg_eval import vg_eval
-from mydetector.model.utils.config import cfg
+from mydetector.utils.config import cfg
 import pickle
 import pdb
 try:
