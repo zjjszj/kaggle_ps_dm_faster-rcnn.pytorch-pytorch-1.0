@@ -7,8 +7,11 @@
 import torch
 #from model.utils.config import cfg
 if torch.cuda.is_available():
-    from mydetector.model.nms.nms_gpu import nms_gpu
-from mydetector.model.nms.nms_cpu import nms_cpu
+    #from mydetector.model.nms.nms_gpu import nms_gpu
+    from mydetector.nms.nms_gpu import nms_gpu
+
+#from mydetector.model.nms.nms_cpu import nms_cpu
+from mydetector.nms.nms_cpu import nms_cpu
 
 def nms(dets, thresh, force_cpu=False):
     """Dispatch to either CPU or GPU NMS implementations."""

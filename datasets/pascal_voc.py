@@ -22,7 +22,7 @@ from .voc_eval import voc_eval
 
 # TODO: make fast_rcnn irrelevant
 # >>>> obsolete, because it depends on sth outside of this project
-from mydetector.model.utils.config import cfg
+from mydetector.utils.config import cfg
 
 try:
     xrange          # Python 2
