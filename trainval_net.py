@@ -412,7 +412,7 @@ class Trainer:
         lr_decay_gamma=0.1
         disp_interval=100
         session=1
-        cfg.TRAIN.USE_FLIPPED = True
+        cfg.TRAIN.USE_FLIPPED = False
         cfg.USE_GPU_NMS = True
 
         cfg_file = "./mydetector/cfgs/{}_ls.yml".format(net) if large_scale else "./mydetector/cfgs/{}.yml".format(net)
