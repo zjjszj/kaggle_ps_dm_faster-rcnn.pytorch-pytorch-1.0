@@ -17,9 +17,9 @@ def get_extensions():
     this_dir = os.path.dirname(os.path.abspath(__file__))
     extensions_dir = this_dir
 
-    main_file = glob.glob(os.path.join(extensions_dir, "*.cpp"))
-    source_cpu = glob.glob(os.path.join(extensions_dir, "cpu", "*.cpp"))
-    source_cuda = glob.glob(os.path.join(extensions_dir, "cuda", "*.cu"))
+    main_file = glob.glob("*.cpp")
+    source_cpu = glob.glob(os.path.join("cpu", "*.cpp"))
+    source_cuda = glob.glob(os.path.join("cuda", "*.cu"))
 
     sources = main_file + source_cpu
     extension = CppExtension
@@ -38,7 +38,8 @@ def get_extensions():
             "-D__CUDA_NO_HALF2_OPERATORS__",
         ]
 
-    sources = [os.path.join(extensions_dir, s) for s in sources]
+    #sources = [os.path.join(extensions_dir, s) for s in sources]
+    sources = [s for s in sources]
 
     include_dirs = [extensions_dir]
 
