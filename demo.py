@@ -392,7 +392,7 @@ class Predictor:
         cfgs ='vgg16.vml'
         set_cfgs=None
         dataset='pascal_voc'
-        image_dir='images'
+        image_dir='/kaggle/working/mydetector/images'
         webcam_num=-1
         cfg_file='/kaggle/working/mydetector/cfgs/vgg16.yml'
         vis=False
