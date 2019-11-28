@@ -394,7 +394,7 @@ class Predictor:
         dataset='pascal_voc'
         image_dir='images'
         webcam_num=-1
-        cfg_file='/kaggle/input/mydetector/cfgs/vgg16.yml'
+        cfg_file='/kaggle/working/mydetector/cfgs/vgg16.yml'
         vis=False
         cfg.CUDA = True
 
