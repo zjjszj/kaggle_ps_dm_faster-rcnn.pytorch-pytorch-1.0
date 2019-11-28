@@ -329,10 +329,10 @@ if __name__ == '__main__':
 
 
 
-#新建一个预测类
-class Predictor:
+#新建一个测试类
+class Test:
 
-    def __call__(self, *args, **kwargs):
+    def test(self):
 
         #输入参数
         dataset='imagenet'
@@ -345,7 +345,7 @@ class Predictor:
 
         np.random.seed(1)
         imdb_name = "imagenet_train"
-        imdbval_name = "imagenet_val"
+        imdbval_name = "pascal_voc"
         set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]']
         cfg_file = "cfgs/{}.yml".format('resnet101')
 
@@ -358,7 +358,7 @@ class Predictor:
 
         print('{:d} roidb entries'.format(len(roidb)))
 
-        input_dir ="models" + "/" + "resnet101" + "/" + dataset
+        input_dir ="/kaggle/working/" + "/" + "vgg16" + "/" + dataset
         if not os.path.exists(input_dir):
             raise Exception('There is no input directory for loading network from ' + input_dir)
         load_name = os.path.join(input_dir,

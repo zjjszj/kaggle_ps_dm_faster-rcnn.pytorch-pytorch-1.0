@@ -145,7 +145,7 @@ class psdb(imdb):
                 'flipped': False})
         pickle(gt_roidb, cache_file)
         print("wrote gt roidb to {}".format(cache_file))
-
+        print('function:gt_roidb-->len(gt_roidb)={0}'.format(len(gt_roidb)))
         return gt_roidb
 
     def evaluate_detections(self, gallery_det, det_thresh=0.5, iou_thresh=0.5,
