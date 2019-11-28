@@ -94,6 +94,7 @@ class psdb(imdb):
         # Load all the train / test persons and label their pids from 0 to N-1
         # Assign pid = -1 for unlabeled background people
         if self._image_set == 'train':
+            print('train=============================================')
             train = loadmat(osp.join(self._root_dir,
                                      'annotation/test/train_test/Train.mat'))
             train = train['Train'].squeeze()
@@ -105,6 +106,7 @@ class psdb(imdb):
                     _set_box_pid(name_to_boxes[im_name], box,
                                  name_to_pids[im_name], index)
         else:
+            print('test============================================')
             test = loadmat(osp.join(self._root_dir,
                                     'annotation/test/train_test/TestG50.mat'))
             test = test['TestG50'].squeeze()
