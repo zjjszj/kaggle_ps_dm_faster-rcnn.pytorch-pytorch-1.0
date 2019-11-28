@@ -391,7 +391,7 @@ class Trainer:
     def train(self):
         #参数
         dataset='pascal_voc'
-        imdb_name = "voc_2007_trainval"
+        imdb_name = "train"
         imdbval_name = "voc_2007_test"
         set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
         net='vgg16'

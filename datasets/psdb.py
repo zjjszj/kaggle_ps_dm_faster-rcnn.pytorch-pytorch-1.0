@@ -92,7 +92,7 @@ class psdb(imdb):
 
         # Load all the train / test persons and label their pids from 0 to N-1
         # Assign pid = -1 for unlabeled background people
-        if self._image_set != 'train':
+        if self._image_set == 'train':
             print('train=============================================')
             train = loadmat(osp.join(self._root_dir,
                                      'annotation/test/train_test/Train.mat'))

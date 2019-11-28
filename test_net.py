@@ -335,9 +335,9 @@ class Test:
     def test(self):
 
         #输入参数
-        dataset='imagenet'
-        checkpoint=416
-        checkepoch=6
+        dataset='pascal_voc'
+        checkpoint=11260
+        checkepoch=1
         checksession=1
 
         if torch.cuda.is_available():
@@ -345,9 +345,9 @@ class Test:
 
         np.random.seed(1)
         imdb_name = "imagenet_train"
-        imdbval_name = "pascal_voc"
+        imdbval_name = "test"
         set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]']
-        cfg_file = "cfgs/{}.yml".format('resnet101')
+        cfg_file = "cfgs/{}.yml".format('vgg16')
 
         print('Using config:')
         pprint.pprint(cfg)
@@ -358,14 +358,14 @@ class Test:
 
         print('{:d} roidb entries'.format(len(roidb)))
 
-        input_dir ="/kaggle/working/" + "/" + "vgg16" + "/" + dataset
+        input_dir ="/kaggle/working/mydetector/models" + "/" + "vgg16" + "/" + dataset
         if not os.path.exists(input_dir):
             raise Exception('There is no input directory for loading network from ' + input_dir)
         load_name = os.path.join(input_dir,
                                  'faster_rcnn_{}_{}_{}.pth'.format(checksession, checkepoch, checkpoint))
 
         # initilize the network here.
-        fasterRCNN = resnet(imdb.classes, 101, pretrained=False, class_agnostic=False)
+        fasterRCNN = vgg16(imdb.classes, pretrained=False, class_agnostic=False)
         fasterRCNN.create_architecture()
 
         print("load checkpoint %s" % (load_name))
