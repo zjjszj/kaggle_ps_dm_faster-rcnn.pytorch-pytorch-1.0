@@ -156,6 +156,7 @@ class psdb(imdb):
         iou_thresh (float): treat as true positive if IoU is above this threshold
         labeled_only (bool): filter out unlabeled background people
         """
+        print('self.num_images={0}'.format(self.num_images))
         assert self.num_images == len(gallery_det)
 
         gt_roidb = self.gt_roidb()
@@ -222,7 +223,6 @@ class psdb(imdb):
                             -1 for using full set
         dump_json (str): Path to save the results as a JSON file or None
         """
-        print('self.num_images={0},len(gallery_feat)={1},len(probe_feat)={2}'.format(self.num_images,gallery_feat,probe_feat))
         assert self.num_images == len(gallery_det)
         assert self.num_images == len(gallery_feat)
         assert len(self.probes) == len(probe_feat)
