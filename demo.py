@@ -382,7 +382,7 @@ def _get_image_blob(im):
 #预测类
 class Predictor:
 
-    def __call__(self, *args, **kwargs):
+    def predict(self):
 
         net='vgg16'
         checksession=1
@@ -417,12 +417,13 @@ class Predictor:
         load_name = os.path.join(input_dir,
                                  'faster_rcnn_{}_{}_{}.pth'.format(checksession, checkepoch, checkpoint))
 
-        pascal_classes = np.asarray(['__background__',
-                                     'aeroplane', 'bicycle', 'bird', 'boat',
-                                     'bottle', 'bus', 'car', 'cat', 'chair',
-                                     'cow', 'diningtable', 'dog', 'horse',
-                                     'motorbike', 'person', 'pottedplant',
-                                     'sheep', 'sofa', 'train', 'tvmonitor'])
+        # pascal_classes = np.asarray(['__background__',
+        #                              'aeroplane', 'bicycle', 'bird', 'boat',
+        #                              'bottle', 'bus', 'car', 'cat', 'chair',
+        #                              'cow', 'diningtable', 'dog', 'horse',
+        #                              'motorbike', 'person', 'pottedplant',
+        #                              'sheep', 'sofa', 'train', 'tvmonitor'])
+        pascal_classes = np.asarray(['__background__', 'person'])
 
         # initilize the network here.
         if net == 'vgg16':
