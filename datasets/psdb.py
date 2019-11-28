@@ -13,7 +13,6 @@ from sklearn.metrics import average_precision_score, precision_recall_curve
 #from utils import cython_bbox
 from mydetector.datasets.imdb import imdb
 
-
 #utils/__init__.py
 import _pickle as cPickle
 
@@ -93,7 +92,7 @@ class psdb(imdb):
 
         # Load all the train / test persons and label their pids from 0 to N-1
         # Assign pid = -1 for unlabeled background people
-        if self._image_set == 'train':
+        if self._image_set != 'train':
             print('train=============================================')
             train = loadmat(osp.join(self._root_dir,
                                      'annotation/test/train_test/Train.mat'))
@@ -145,7 +144,7 @@ class psdb(imdb):
                 'flipped': False})
         pickle(gt_roidb, cache_file)
         print("wrote gt roidb to {}".format(cache_file))
-        print('function:gt_roidb-->len(gt_roidb)={0}'.format(len(gt_roidb)))
+        print('function gt_roidb()->len(gt_roidb)={0}'.format(len(gt_roidb)))
         return gt_roidb
 
     def evaluate_detections(self, gallery_det, det_thresh=0.5, iou_thresh=0.5,
@@ -443,8 +442,11 @@ class psdb(imdb):
 if __name__ == '__main__':
     #from datasets.psdb import psdb
     d = psdb('train',root_dir=r'F:\datasets\reid\CUHK-SYSU_V2\dataset')
-    res = d.roidb
-
+    train = d.gt_roidb()
+    print(len(train))
+    d=psdb('test',root_dir=r'F:\datasets\reid\CUHK-SYSU_V2\dataset')
+    test=d.gt_roidb()
+    print(len(test))
 
 
 
