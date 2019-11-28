@@ -130,7 +130,10 @@ def combined_roidb(imdb_names, training=True):
   #   imdb = datasets.imdb.imdb(imdb_names, tmp.classes)
   # else:
   #   imdb = get_imdb(imdb_names)
-  imdb=psdb('train')
+  if imdb_names=='train':
+      imdb=psdb('train')
+  else:
+      imdb=psdb('test')
 
   if training:
     roidb = filter_roidb(roidb)
