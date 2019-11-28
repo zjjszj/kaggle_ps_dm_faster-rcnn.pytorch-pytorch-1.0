@@ -7,7 +7,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import _init_paths
+#import _init_paths
 import os
 import sys
 import numpy as np
@@ -26,15 +26,15 @@ from torch.autograd import Variable
 from matplotlib.pyplot import imread
 # from roi_data_layer.roidb import combined_roidb
 # from roi_data_layer.roibatchLoader import roibatchLoader
-from utils.config import cfg, cfg_from_file, cfg_from_list, get_output_dir
-from rpn.bbox_transform import clip_boxes
+from mydetector.utils.config import cfg, cfg_from_file, cfg_from_list, get_output_dir
+from mydetector.rpn.bbox_transform import clip_boxes
 # from model.nms.nms_wrapper import nms
-from roi_layers import nms
-from rpn.bbox_transform import bbox_transform_inv
-from utils.net_utils import save_net, load_net, vis_detections
-from utils.blob import im_list_to_blob
-from faster_rcnn.vgg16 import vgg16
-from faster_rcnn.resnet import resnet
+from mydetector.roi_layers import nms
+from mydetector.rpn.bbox_transform import bbox_transform_inv
+from mydetector.utils.net_utils import save_net, load_net, vis_detections
+from mydetector.utils.blob import im_list_to_blob
+from mydetector.faster_rcnn.vgg16 import vgg16
+from mydetector.faster_rcnn.resnet import resnet
 import pdb
 
 try:
