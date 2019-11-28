@@ -336,7 +336,7 @@ class Test:
 
         #输入参数
         dataset='pascal_voc'
-        checkpoint=11260
+        checkpoint=11205
         checkepoch=1
         checksession=1
 
@@ -358,7 +358,7 @@ class Test:
 
         print('{:d} roidb entries'.format(len(roidb)))
 
-        input_dir ="/kaggle/working/mydetector/models" + "/" + "vgg16" + "/" + dataset
+        input_dir ="/kaggle/input/mypretrainmodels"
         if not os.path.exists(input_dir):
             raise Exception('There is no input directory for loading network from ' + input_dir)
         load_name = os.path.join(input_dir,

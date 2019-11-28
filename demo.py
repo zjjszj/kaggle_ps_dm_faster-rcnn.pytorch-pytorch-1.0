@@ -388,7 +388,7 @@ class Predictor:
         checksession=1
         checkepoch =6
         checkpoint =10021
-        load_dir='/kaggle/input/fasterrcnn_vgg16_pretrainmodel/faster_rcnn_1_6_10021.pth'
+        load_dir='/kaggle/input/fasterrcnn-vgg16-pretrainmodel'
         cfgs ='vgg16.vml'
         set_cfgs=None
         dataset='pascal_voc'
@@ -411,7 +411,7 @@ class Predictor:
         # -- Note: Use validation set and disable the flipped to enable faster loading.
 
         #加载预训练模型
-        input_dir = load_dir + "/" + net + "/" + dataset
+        input_dir = load_dir
         if not os.path.exists(input_dir):
             raise Exception('There is no input directory for loading network from ' + input_dir)
         load_name = os.path.join(input_dir,
