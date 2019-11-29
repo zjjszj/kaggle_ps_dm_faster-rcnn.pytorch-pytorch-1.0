@@ -35,6 +35,22 @@ def _compute_iou(a, b):
     return inter * 1.0 / union
 
 
+#输出信息保存到文件中
+import sys
+class Logger(object):
+    def __init__(self, filename="Default.log"):
+        self.terminal = sys.stdout
+        self.log = open(filename, "a")
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+
+    def flush(self):
+        pass
+sys.stdout = Logger('a.txt')
+
+
 class psdb(imdb):
     def __init__(self, image_set, root_dir='/kaggle/input/cuhk-sysu/CUHK-SYSU_nomacosx/dataset'):  #使用于kaggle
         super(psdb, self).__init__('psdb_' + image_set)
