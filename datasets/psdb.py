@@ -157,7 +157,6 @@ class psdb(imdb):
         labeled_only (bool): filter out unlabeled background people
         """
         assert self.num_images == len(gallery_det)
-        print('gallery_det.shape={0}'.format(np.asarray(gallery_det).shape))
         gt_roidb = self.gt_roidb()
         y_true, y_score = [], []
         count_gt, count_tp = 0, 0
@@ -168,7 +167,8 @@ class psdb(imdb):
                 if len(inds) == 0: continue
                 gt_boxes = gt_boxes[inds]
             det = np.asarray(det)
-            print('det.shape={0}'.format(det.shape))
+            print('det.shape={0}'.format(det.shape))  #det.shape=(72, 5)
+            print('det={0}'.format(det))
             inds = np.where(det[:, 4].ravel() >= det_thresh)[0]
             det = det[inds]
             num_gt = gt_boxes.shape[0]
