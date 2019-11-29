@@ -494,9 +494,9 @@ class Test:
             misc_toc = time.time()
             nms_time = misc_toc - misc_tic
 
-            sys.stdout.write('im_detect: {:d}/{:d} {:.3f}s {:.3f}s   \r' \
-                             .format(i + 1, num_images, detect_time, nms_time))
-            sys.stdout.flush()
+            #sys.stdout.write('im_detect: {:d}/{:d} {:.3f}s {:.3f}s   \r' \
+            #                .format(i + 1, num_images, detect_time, nms_time))
+            #sys.stdout.flush()
 
 
         with open(det_file, 'wb') as f:
