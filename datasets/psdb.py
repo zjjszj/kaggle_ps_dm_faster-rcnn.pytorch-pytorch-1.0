@@ -185,7 +185,9 @@ class psdb(imdb):
             det = np.asarray(det)
             print('det.shape={0}'.format(det.shape))  #det.shape=(72, 5)
             print('det={0}'.format(det))
-            inds = np.where(det[:, 4].ravel() >= det_thresh)[0]
+            print('det[:, 4].ravel()={0}'.format(det[:, 4].ravel()))
+            print('det[:, 4].ravel() >= 0.5={0}'.format(det[:, 4].ravel() >= 0.5))
+            inds = np.where(det[:, 4].ravel() >= 0.5)[0]  #det_thresh
             det = det[inds]
             num_gt = gt_boxes.shape[0]
             num_det = det.shape[0]
