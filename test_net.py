@@ -494,16 +494,15 @@ class Test:
             misc_toc = time.time()
             nms_time = misc_toc - misc_tic
 
-            #sys.stdout.write('im_detect: {:d}/{:d} {:.3f}s {:.3f}s   \r' \
-            #                .format(i + 1, num_images, detect_time, nms_time))
-            #sys.stdout.flush()
+            sys.stdout.write('im_detect: {:d}/{:d} {:.3f}s {:.3f}s   \r' \
+                            .format(i + 1, num_images, detect_time, nms_time))
+            sys.stdout.flush()
 
 
         with open(det_file, 'wb') as f:
             pickle.dump(all_boxes, f, pickle.HIGHEST_PROTOCOL)
 
         print('Evaluating detections')
-        print('all_boxes[1]={0}'.format(all_boxes[1]))
         imdb.evaluate_detections(all_boxes[1], output_dir)  #len(all_boxes)=2  all_boxes[1].shape=(6978,)
 
         end = time.time()
