@@ -477,7 +477,9 @@ class Test:
                     cls_dets = cls_dets[order]
                     keep = nms(cls_boxes[order, :], cls_scores[order], cfg.TEST.NMS)
                     cls_dets = cls_dets[keep.view(-1).long()]
-
+                    all_boxes[j][i] = cls_dets.cpu().numpy()
+                    print('inds.numel()>0===============================')
+                else:
                     all_boxes[j][i] = empty_array
 
             # Limit to max_per_image detections *over all classes*
