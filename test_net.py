@@ -478,7 +478,6 @@ class Test:
                     keep = nms(cls_boxes[order, :], cls_scores[order], cfg.TEST.NMS)
                     cls_dets = cls_dets[keep.view(-1).long()]
                     all_boxes[j][i] = cls_dets.cpu().numpy()
-                    print('inds.numel()>0===============================')
                 else:
                     all_boxes[j][i] = empty_array
 
@@ -504,8 +503,8 @@ class Test:
             pickle.dump(all_boxes, f, pickle.HIGHEST_PROTOCOL)
 
         print('Evaluating detections')
-        print('len(all_boxes)={0},all_boxes={1}'.format(len(all_boxes),all_boxes))
-        imdb.evaluate_detections(all_boxes, output_dir)
+        print('len(all_boxes)={0}'.format(len(all_boxes)))
+        imdb.evaluate_detections(all_boxes[1], output_dir)
 
         end = time.time()
         print("test time: %0.4fs" % (end - start))
