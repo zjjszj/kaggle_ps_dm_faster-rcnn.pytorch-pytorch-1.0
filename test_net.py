@@ -503,7 +503,7 @@ class Test:
             pickle.dump(all_boxes, f, pickle.HIGHEST_PROTOCOL)
 
         print('Evaluating detections')
-        print('all_boxes={0}'.format(all_boxes))
+        print('all_boxes[1]={0}'.format(all_boxes[1]))
         imdb.evaluate_detections(all_boxes[1], output_dir)  #len(all_boxes)=2  all_boxes[1].shape=(6978,)
 
         end = time.time()
