@@ -408,7 +408,7 @@ class Trainer:
         mGPUs=False
         use_tfboard=False
         start_epoch=1
-        max_epochs=6
+        max_epochs=4
         lr_decay_gamma=0.1
         disp_interval=100
         session=1
