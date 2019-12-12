@@ -386,9 +386,9 @@ class Predictor:
 
         net='vgg16'
         checksession=1
-        checkepoch =6
-        checkpoint =10021
-        load_dir='/kaggle/input/fasterrcnn-vgg16-pretrainmodel'
+        checkepoch =4
+        checkpoint =11205
+        load_dir='/kaggle/input/trained-model'
         cfgs ='vgg16.vml'
         set_cfgs=None
         dataset='pascal_voc'
