@@ -512,7 +512,7 @@ class Trainer:
             #                          'faster_rcnn_{}_{}_{}.pth'.format(checksession, checkepoch,
             #                                                            checkpoint))
             #改成kaggle中的路径
-            load_name = os.path.join('kaggle/input/trained_model',
+            load_name = os.path.join('kaggle/input/trained-model',
                                      'faster_rcnn_{}_{}_{}.pth'.format(checksession, checkepoch,
                                                                        checkpoint))
             print("loading checkpoint %s" % (load_name))
