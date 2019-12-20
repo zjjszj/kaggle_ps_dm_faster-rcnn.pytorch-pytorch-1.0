@@ -401,17 +401,19 @@ class Trainer:
         save_dir='models'
         batch_size=1
         optimizer='sgd'
-        resume=False
+
+        #复用参数
+        resume=True
         checksession=1
-        checkepoch=1
-        checkpoint=0
+        checkepoch=4
+        checkpoint=11205
+
         mGPUs=False
         use_tfboard=False
         start_epoch=1
         max_epochs=4
         lr_decay_gamma=0.1
         disp_interval=100
-        session=1
         cfg.TRAIN.USE_FLIPPED = False
         cfg.USE_GPU_NMS = True
 
@@ -506,7 +508,11 @@ class Trainer:
             optimizer = torch.optim.SGD(params, momentum=cfg.TRAIN.MOMENTUM)
 
         if resume:
-            load_name = os.path.join(output_dir,
+            # load_name = os.path.join(output_dir,
+            #                          'faster_rcnn_{}_{}_{}.pth'.format(checksession, checkepoch,
+            #                                                            checkpoint))
+            #改成kaggle中的路径
+            load_name = os.path.join('kaggle/input/trained_model',
                                      'faster_rcnn_{}_{}_{}.pth'.format(checksession, checkepoch,
                                                                        checkpoint))
             print("loading checkpoint %s" % (load_name))

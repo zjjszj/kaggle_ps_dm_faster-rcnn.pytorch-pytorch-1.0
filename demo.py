@@ -450,8 +450,6 @@ class Predictor:
 
         # pdb.set_trace()
 
-        print("load checkpoint %s" % (load_name))
-
         # initilize the tensor holder here.
         im_data = torch.FloatTensor(1)
         im_info = torch.FloatTensor(1)
