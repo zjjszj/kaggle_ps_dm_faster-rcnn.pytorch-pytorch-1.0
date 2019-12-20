@@ -411,7 +411,7 @@ class Trainer:
         mGPUs=False
         use_tfboard=False
         start_epoch=1
-        max_epochs=4
+        max_epochs=8
         lr_decay_gamma=0.1
         disp_interval=100
         cfg.TRAIN.USE_FLIPPED = False
