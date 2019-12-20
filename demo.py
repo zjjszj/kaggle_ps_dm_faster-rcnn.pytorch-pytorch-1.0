@@ -388,7 +388,7 @@ class Predictor:
         checksession=1
         checkepoch =8
         checkpoint =11205
-        load_dir='/kaggle/input/trained-model'
+        load_dir='/kaggle/input/trained-model2'
         cfgs ='vgg16.vml'
         set_cfgs=None
         dataset='pascal_voc'
