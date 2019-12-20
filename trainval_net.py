@@ -484,7 +484,7 @@ class Trainer:
 
         fasterRCNN.create_architecture()
 
-        lr = cfg.TRAIN.LEARNING_RATE
+        lr = cfg.TRAIN.LEARNING_RATE  #0.001
         lr = lr
         # tr_momentum = cfg.TRAIN.MOMENTUM
         # tr_momentum = args.momentum
@@ -543,7 +543,7 @@ class Trainer:
 
             if epoch % (lr_decay_step + 1) == 0:
                 adjust_learning_rate(optimizer, lr_decay_gamma)
-                lr *= lr_decay_gamma
+                lr *= lr_decay_gamma    #用于显示
 
             data_iter = iter(dataloader)
             for step in range(iters_per_epoch):
