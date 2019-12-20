@@ -386,7 +386,7 @@ class Predictor:
 
         net='vgg16'
         checksession=1
-        checkepoch =4
+        checkepoch =8
         checkpoint =11205
         load_dir='/kaggle/input/trained-model'
         cfgs ='vgg16.vml'
