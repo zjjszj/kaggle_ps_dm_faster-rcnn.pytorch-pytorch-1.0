@@ -408,6 +408,7 @@ class Trainer:
         checkepoch=14
         checkpoint=11205
 
+
         mGPUs=False
         use_tfboard=False
         start_epoch=1
