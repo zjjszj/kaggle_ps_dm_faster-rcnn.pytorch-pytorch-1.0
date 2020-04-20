@@ -405,15 +405,15 @@ class Trainer:
         #复用参数
         resume=True
         checksession=1
-        checkepoch=4
+        checkepoch=8
         checkpoint=11205
 
         mGPUs=False
         use_tfboard=False
         start_epoch=1
-        max_epochs=8
+        max_epochs=12
         lr_decay_gamma=0.1
-        disp_interval=100
+        disp_interval=1000
         cfg.TRAIN.USE_FLIPPED = False
         cfg.USE_GPU_NMS = True
 
@@ -512,7 +512,7 @@ class Trainer:
             #                          'faster_rcnn_{}_{}_{}.pth'.format(checksession, checkepoch,
             #                                                            checkpoint))
             #改成kaggle中的路径
-            load_name = os.path.join('/kaggle/input/trained-model',
+            load_name = os.path.join('/kaggle/input/mytrainedmodel',
                                      'faster_rcnn_{}_{}_{}.pth'.format(checksession, checkepoch,
                                                                        checkpoint))
             print("loading checkpoint %s" % (load_name))
