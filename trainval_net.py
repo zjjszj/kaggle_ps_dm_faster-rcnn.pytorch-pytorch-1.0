@@ -405,13 +405,13 @@ class Trainer:
         #复用参数
         resume=True
         checksession=1
-        checkepoch=8
+        checkepoch=14
         checkpoint=11205
 
         mGPUs=False
         use_tfboard=False
         start_epoch=1
-        max_epochs=12
+        max_epochs=20    #epoch=max_epochs-checkepoch=6
         lr_decay_gamma=0.1
         disp_interval=1000
         cfg.TRAIN.USE_FLIPPED = False

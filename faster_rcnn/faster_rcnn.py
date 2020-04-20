@@ -18,6 +18,7 @@ from mydetector.rpn.proposal_target_layer_cascade import _ProposalTargetLayer
 import time
 import pdb
 from mydetector.utils.net_utils import _smooth_l1_loss, _crop_pool_layer, _affine_grid_gen, _affine_theta
+import gc
 
 class _fasterRCNN(nn.Module):
     """ faster RCNN """
@@ -107,6 +108,8 @@ class _fasterRCNN(nn.Module):
         cls_prob = cls_prob.view(batch_size, rois.size(1), -1)
         bbox_pred = bbox_pred.view(batch_size, rois.size(1), -1)
 
+        del base_feat
+        gc.collect()
         return rois, cls_prob, bbox_pred, rpn_loss_cls, rpn_loss_bbox, RCNN_loss_cls, RCNN_loss_bbox, rois_label
 
     def _init_weights(self):
