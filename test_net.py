@@ -336,8 +336,8 @@ class Test:
 
         #输入参数
         dataset='pascal_voc'
-        checkpoint=10021
-        checkepoch=6
+        checkpoint=11205
+        checkepoch=8
         checksession=1
 
         if torch.cuda.is_available():
@@ -358,7 +358,7 @@ class Test:
 
         print('{:d} roidb entries'.format(len(roidb)))
 
-        input_dir ="/kaggle/input/fasterrcnn-vgg16-pretrainmodel"
+        input_dir ="/kaggle/input/mytrainedmodel/"
         if not os.path.exists(input_dir):
             raise Exception('There is no input directory for loading network from ' + input_dir)
         load_name = os.path.join(input_dir,
