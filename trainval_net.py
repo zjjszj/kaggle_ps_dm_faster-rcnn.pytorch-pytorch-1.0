@@ -390,7 +390,7 @@ class Trainer:
 
     def train(self):
         #参数
-        dataset='pascal_voc'
+        dataset='cuhk-sysu'
         imdb_name = "train"
         imdbval_name = "voc_2007_test"
         set_cfgs = ['ANCHOR_SCALES', '[8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]', 'MAX_NUM_GT_BOXES', '20']
@@ -405,14 +405,14 @@ class Trainer:
         #复用参数
         resume=True
         checksession=1
-        checkepoch=14
+        checkepoch=12
         checkpoint=11205
 
 
         mGPUs=False
         use_tfboard=False
         start_epoch=1
-        max_epochs=20    #epoch=max_epochs-checkepoch=6
+        max_epochs=18    #epoch=max_epochs-checkepoch=6
         lr_decay_gamma=0.1
         disp_interval=1000
         cfg.TRAIN.USE_FLIPPED = False
@@ -513,7 +513,7 @@ class Trainer:
             #                          'faster_rcnn_{}_{}_{}.pth'.format(checksession, checkepoch,
             #                                                            checkpoint))
             #改成kaggle中的路径
-            load_name = os.path.join('/kaggle/input/mytrainedmodel',
+            load_name = os.path.join('/kaggle/input/ps-dm-mydetector/models/vgg16/pascal_voc',
                                      'faster_rcnn_{}_{}_{}.pth'.format(checksession, checkepoch,
                                                                        checkpoint))
             print("loading checkpoint %s" % (load_name))
