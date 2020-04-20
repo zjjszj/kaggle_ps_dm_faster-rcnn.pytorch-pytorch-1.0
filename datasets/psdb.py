@@ -183,10 +183,7 @@ class psdb(imdb):
                 if len(inds) == 0: continue
                 gt_boxes = gt_boxes[inds]
             det = np.asarray(det)
-            print('det.shape={0}'.format(det.shape))  #det.shape=(72, 5)
-            print('det={0}'.format(det))
-            print('det[:, 4].ravel()={0}'.format(det[:, 4].ravel()))
-            print('det[:, 4].ravel() >= 0.5={0}'.format(det[:, 4].ravel() >= 0.5))
+
             inds = np.where(det[:, 4].ravel() >= 0.5)[0]  #det_thresh
             det = det[inds]
             num_gt = gt_boxes.shape[0]
@@ -227,7 +224,7 @@ class psdb(imdb):
 
         print ('{} detection:'.format('labeled only' if labeled_only else  'all'))
         print('  recall = {:.2%}'.format(det_rate))
-        if not labeled_only: print( '  ap = {:.2%}'.format(ap))
+        if not labeled_only: print('  ap = {:.2%}'.format(ap))
 
     def evaluate_search(self, gallery_det, gallery_feat, probe_feat,
                         det_thresh=0.5, gallery_size=100, dump_json=None):
