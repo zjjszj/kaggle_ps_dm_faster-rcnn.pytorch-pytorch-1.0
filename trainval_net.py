@@ -401,6 +401,7 @@ class Trainer:
         save_dir='models'
         batch_size=1
         optimizer='sgd'
+        save_step=3
 
         #复用参数
         resume=True
@@ -610,14 +611,15 @@ class Trainer:
 
                     loss_temp = 0
                     start = time.time()
-
-            save_name = os.path.join(output_dir, 'faster_rcnn_{}_{}_{}.pth'.format(session, epoch, step))
-            save_checkpoint({
-                'session': session,
-                'epoch': epoch + 1,
-                'model': fasterRCNN.module.state_dict() if mGPUs else fasterRCNN.state_dict(),
-                'optimizer': optimizer.state_dict(),
-                'pooling_mode': cfg.POOLING_MODE,
-                'class_agnostic': False,
-            }, save_name)
-            print('save model: {}'.format(save_name))
+            #save model
+            if(epoch%save_step==0 or epoch==max_epochs):
+                save_name = os.path.join(output_dir, 'faster_rcnn_{}_{}_{}.pth'.format(session, epoch, step))
+                save_checkpoint({
+                    'session': session,
+                    'epoch': epoch + 1,
+                    'model': fasterRCNN.module.state_dict() if mGPUs else fasterRCNN.state_dict(),
+                    'optimizer': optimizer.state_dict(),
+                    'pooling_mode': cfg.POOLING_MODE,
+                    'class_agnostic': False,
+                }, save_name)
+                print('save model: {}'.format(save_name))
