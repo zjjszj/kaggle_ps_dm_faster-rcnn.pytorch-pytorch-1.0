@@ -358,7 +358,7 @@ class Test:
 
         print('{:d} roidb entries'.format(len(roidb)))
 
-        input_dir ="/kaggle/input/mytrainedmodel/"
+        input_dir ="/kaggle/input/ps-dm-mydetecter2/models/vgg16/cuhk-sysu/"
         if not os.path.exists(input_dir):
             raise Exception('There is no input directory for loading network from ' + input_dir)
         load_name = os.path.join(input_dir,
