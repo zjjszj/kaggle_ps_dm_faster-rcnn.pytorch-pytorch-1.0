@@ -337,7 +337,7 @@ class Test:
         #输入参数
         dataset='pascal_voc'
         checkpoint=11205
-        checkepoch=8
+        checkepoch=18
         checksession=1
 
         if torch.cuda.is_available():
